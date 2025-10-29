@@ -28,3 +28,13 @@ h4 {
   font-size: 2rem;
   line-height: 2.8rem;
 }
+
+dialog {
+  max-width: 43.3rem;  
+  transition: display 1s allow-discrete, overlay 1s allow-discrete;
+  animation: close 1s forwards;
+
+  &[open] {
+    animation: open 1s forwards;
+  }
+}

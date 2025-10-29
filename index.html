@@ -29,7 +29,7 @@
           <img
             src="/cart.svg"
             alt="Open Cart"
-            class="header__cart"
+            class="header__cart-trigger js-cart-drawer-trigger"
           />
         </div>
       </header>
@@ -55,12 +55,32 @@
             <div class="card__content">
               <h4 class="card__title">Natures Menu Dog Food Can Chicken</h4>
               <p class="card__price">£22.81</p>
-              <button class="button">Add to Cart</button>
+              <button 
+                class="button js-add-to-cart"
+                type="button"
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <dialog class="cart-drawer js-cart-drawer">
+      <div class="cart-drawer__header">
+        <h2 class="cart-drawer__title">Cart</h2>
+        <button class="cart-drawer__close">
+          <img 
+            src="/close.svg" 
+            alt="Close"
+            class="cart-drawer__close-trigger js-cart-drawer-trigger"
+          >
+        </button>
+      </div>
+
+      <div class="cart-drawer__content"></div>
+    </dialog>
 
     <script type="module" src="/src/js/main.js"></script>
   </body>
