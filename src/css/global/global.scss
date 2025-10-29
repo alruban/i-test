@@ -30,11 +30,48 @@ h4 {
 }
 
 dialog {
-  max-width: 43.3rem;  
-  transition: display 1s allow-discrete, overlay 1s allow-discrete;
-  animation: close 1s forwards;
+  max-width: 43.3rem;
+
+  &::backdrop {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
 
   &[open] {
-    animation: open 1s forwards;
+    animation: open 350ms ease-in-out forwards;
+
+    &::backdrop {
+      opacity: 1;
+    }
+  }
+
+  &.closing {
+    animation: close 350ms ease-in-out forwards;
+
+    &::backdrop {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
