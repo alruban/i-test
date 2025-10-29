@@ -4,12 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-project</title>
+    <title>BARK</title>
+
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <main>
       <header class="header">
-        <div class="header__container container">
+        <div class="header__container">
           <a href="/">
             <img
               src="/logo.svg"
@@ -26,7 +34,34 @@
         </div>
       </header>
 
+      <section class="promo">
+        <div class="promo__content">
+          <div class="promo__text">
+            <h3 class="promo__title">Ornare Vulputate Elit</h3>
+            <p class="promo__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+            </p>
+          </div>
+        </div>
+
+        <div class="promo__card">
+          <div class="card">
+            <img
+              src="/card-image.png"
+              alt="Natures Menu Dog Food Can Chicken"
+              class="card__image"
+            />
+
+            <div class="card__content">
+              <h4 class="card__title">Natures Menu Dog Food Can Chicken</h4>
+              <p class="card__price">£22.81</p>
+              <button class="button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

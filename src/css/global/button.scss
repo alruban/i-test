@@ -1,0 +1,23 @@
+.button {
+  min-width: 17.9rem;
+  height: 4.6rem;
+  border-radius: 5rem;
+  background-color: var(--color-orange);
+  color: white;
+  line-height: 2.4rem;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 0.1rem solid var(--color-orange);
+  cursor: pointer;
+  transition: border-color 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: white;
+      color: var(--color-orange);
+    }
+  }
+}

@@ -1,8 +1,11 @@
 /* Global Styles */
 @use "./global/reset";
 @use "./global/variables";
-@use "./global/layout";
+@use "./global/global";
+@use "./global/button";
 
 /* Components */
 @use "./components/header";
+@use "./components/promo";
+@use "./components/card";
 

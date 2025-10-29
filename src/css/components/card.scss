@@ -1,0 +1,45 @@
+.card {
+  width: 33.2rem;
+  height: 47rem;
+  padding-top: 4rem;
+  padding-right: 4.5rem;
+  padding-bottom: 4rem;
+  padding-left: 4.5rem;
+  gap: 3.5rem;
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.4rem 1rem 1rem #C2E6ED80;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    width: 33.8rem;
+    height: 47rem;
+  }
+
+  &__image {
+    width: 23rem;
+    height: 19.9rem;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__price {
+    color: var(--color-orange);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    text-align: center;
+  }
+}

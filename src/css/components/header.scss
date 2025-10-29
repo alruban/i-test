@@ -1,5 +1,6 @@
 .header {
   padding-block: 6rem 3rem;
+  padding-inline: 40px;
   background-color: var(--color-grey);
 
   @media (min-width: 768px) {
@@ -8,6 +9,7 @@
     position: fixed;
     width: 100%;
     inset: 0;
+    height: 114px;
   }
 
   &__container {
