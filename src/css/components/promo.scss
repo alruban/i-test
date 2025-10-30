@@ -1,8 +1,12 @@
 .promo {
+  min-height: calc(100dvh - 116px);
+  display: grid;
+  grid-template-rows: auto 1fr;
+
   @media (min-width: 768px) {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 100dvh;
+    grid-template-rows: 1fr;
+    min-height: 100dvh;
   }
 
   &__content {
@@ -21,9 +25,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3.5rem;
+    gap: 2.5rem;
     max-width: 46rem;
     margin-inline: auto;
+
+    @media (min-width: 768px) {
+      gap: 3.5rem;
+    }
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    line-height: 4rem;
+
+    @media (min-width: 768px) {
+      font-size: 4rem;
+      line-height: 100%;
+    }
   }
 
   &__card {
