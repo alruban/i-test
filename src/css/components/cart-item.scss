@@ -1,0 +1,39 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1.9rem;
+  border-bottom: 0.1rem solid var(--color-border);
+  padding-block: 1.9rem;
+
+  &__image {
+    max-width: 14.2rem;
+    max-height: 12.3rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  &__price {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    color: var(--color-orange);
+  }
+
+  &__remove {
+    width: fit-content;
+    color: var(--color-border);
+  }
+}

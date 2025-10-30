@@ -101,11 +101,24 @@
         </button>
       </header>
 
-      <div class="cart-drawer__content"></div>
+      <div class="cart-drawer__content">
+        <div class="cart-item">
+          <img
+            src="/card-image.png"
+            alt="Natures Menu Dog Food Can Chicken"
+            class="cart-item__image"
+          />
+          <div class="cart-item__content">
+            <h4 class="cart-item__title">Natures Menu Dog Food Can Chicken</h4>
+            <p class="cart-item__price">£22.81</p>
+            <button class="cart-item__remove link js-cart-drawer-trigger">Remove X</button>
+          </div>
+        </div>
+      </div>
 
       <footer class="cart-drawer__footer">
         <p class="cart-drawer__subtotal">Subtotal: £22.81</p>
-        <button class="button cart-drawer__checkout-button">Proceed to Checkout</button>
+        <button class="button cart-drawer__checkout-button js-cart-drawer-trigger">Proceed to Checkout</button>
         <button class="link">Continue Shopping</button>
       </footer>
     </dialog>
