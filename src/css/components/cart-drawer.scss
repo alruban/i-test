@@ -1,7 +1,43 @@
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.75);
-}   
-
 .cart-drawer {
   margin-right: 0;
+  &__title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+
+  &__close {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  &__content {
+    height: 100%;
+    overflow-y: auto;
+    padding-inline: 5rem;
+    padding-block: 2.5rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-inline: 5rem;
+    padding-block: 2rem;
+    border-top: 0.1rem solid var(--color-border);
+    height: var(--drawer-footer-height);
+  }
+
+  &__checkout-button {
+    max-width: 27.4rem;
+    width: 100%;
+  }
+
+  &__subtotal {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    text-align: center;
+  }
 }

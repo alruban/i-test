@@ -24,13 +24,7 @@
   }
 
   &__cart-trigger {
-    cursor: pointer;
-    transition: scale 300ms ease-in-out;
-
-    @media (hover: hover) {
-      &:hover {
-        scale: 1.1;
-      }
-    }
+    width: 2.9rem;
+    height: 2.6rem;
   }
 }

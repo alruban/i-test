@@ -1,0 +1,9 @@
+.animate-scale {
+  transition: scale 300ms ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}

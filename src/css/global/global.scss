@@ -30,19 +30,31 @@ h4 {
 }
 
 dialog {
+  --drawer-header-height: 6.8rem;
+  --drawer-footer-height: 17.3rem;
   max-width: 43.3rem;
+  pointer-events: none;
 
   &::backdrop {
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.75);
+    animation: fade-in 350ms ease-in-out forwards;
+    transition: opacity 350ms ease-in-out;
+
+    &[open] {
+      animation: none;
+      opacity: 1;
+    }
+
+    &.closing {
+      opacity: 0;
+    }
   }
 
   &[open] {
     animation: open 350ms ease-in-out forwards;
-
-    &::backdrop {
-      opacity: 1;
-    }
+    pointer-events: auto;
+    display: grid;
+    grid-template-rows: var(--drawer-header-height) 1fr var(--drawer-footer-height);
   }
 
   &.closing {
@@ -51,6 +63,16 @@ dialog {
     &::backdrop {
       opacity: 0;
     }
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 5rem;
+    padding-block: 1.9rem 1.6rem;
+    border-bottom: 0.1rem solid var(--color-border);
+    height: var(--drawer-header-height);
   }
 }
 
@@ -73,5 +95,14 @@ dialog {
   to {
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

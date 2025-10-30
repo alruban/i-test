@@ -4,37 +4,41 @@ export default class CartDrawer {
   constructor(element) {
     this.el = element;
 
-    this.#exposeTriggers();
+    this.#bindEvents();
   }
 
-  #exposeTriggers = () => {
-    this.elTriggers.forEach(trigger => trigger.addEventListener("click", this.#handleAnimations));
+  #bindEvents = () => {
+    this.elTriggers.forEach(trigger => trigger.addEventListener("click", () => {
+      if (this.el.open) {
+        this.el.classList.add("closing");
+      } else {
+        this.el.showModal();
+      }
+    }));
+
+    this.el.addEventListener("animationend", (e) => {
+      if (e.animationName === "close") {
+        this.#closeModal();
+      }
+    });
 
     this.el.addEventListener('click', ((e) => {
       const rect = e.target.getBoundingClientRect();
       if (rect.left > e.clientX ||
-            rect.right < event.clientX ||
-            rect.top > event.clientY ||
-            rect.bottom < event.clientY
-        ) {
-            this.#closeModal();
-        }
+        rect.right < e.clientX ||
+        rect.top > e.clientY ||
+        rect.bottom < e.clientY
+      ) {
+        this.el.classList.add("closing");
+      }
       })
     );
   }
 
-  #handleAnimations = () => {
-    if (this.el.open) {
-      this.#closeModal();
-    } else {
-      this.el.classList.remove("closing");
-      this.el.showModal();
-    }
-  }
-
   #closeModal = () => {
-    this.el.addEventListener("animationend", () => setTimeout(() => this.el.close(), 300), { once: true });
-    this.el.classList.add("closing");
+    this.el.close();
+    this.el.classList.remove("closing");
+    this.el.removeAttribute("open");
   }
 }
 

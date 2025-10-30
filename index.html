@@ -22,15 +22,19 @@
             <img
               src="/logo.svg"
               alt="Home"
-              class="header__logo"
+              class="header__logo animate-scale"
             />
           </a>
 
-          <img
-            src="/cart.svg"
-            alt="Open Cart"
-            class="header__cart-trigger js-cart-drawer-trigger"
-          />
+          <button
+            class="header__cart-trigger animate-scale js-cart-drawer-trigger"
+            type="button"
+          >
+            <img
+              src="/cart.svg"
+              alt="Open Cart"
+            />
+          </button>
         </div>
       </header>
 
@@ -55,11 +59,29 @@
             <div class="card__content">
               <h4 class="card__title">Natures Menu Dog Food Can Chicken</h4>
               <p class="card__price">£22.81</p>
-              <button 
+              <button
                 class="button js-add-to-cart"
                 type="button"
               >
-                Add to Cart
+                <span class="button__text js-add-to-cart-text">Add to Cart</span>
+                <span
+                  class="button__loader js-add-to-cart-loading"
+                  aria-hidden="true"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                    <radialGradient id="a8" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)">
+                      <stop offset="0" stop-color="currentColor"/>
+                      <stop offset=".3" stop-color="currentColor" stop-opacity=".9"/>
+                      <stop offset=".6" stop-color="currentColor" stop-opacity=".6"/>
+                      <stop offset=".8" stop-color="currentColor" stop-opacity=".3"/>
+                      <stop offset="1" stop-color="currentColor" stop-opacity="0"/>
+                    </radialGradient>
+                    <circle transform-origin="center" fill="none" stroke="url(#a8)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70">
+                      <animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"/>
+                    </circle>
+                    <circle transform-origin="center" fill="none" opacity=".2" stroke="currentColor" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"/>
+                  </svg>
+                </span>
               </button>
             </div>
           </div>
@@ -68,18 +90,24 @@
     </main>
 
     <dialog class="cart-drawer js-cart-drawer">
-      <div class="cart-drawer__header">
-        <h2 class="cart-drawer__title">Cart</h2>
-        <button class="cart-drawer__close">
-          <img 
+      <header class="cart-drawer__header">
+        <h3 class="cart-drawer__title">Your Bag</h3>
+        <button class="cart-drawer__close animate-scale js-cart-drawer-trigger">
+          <img
             src="/close.svg" 
             alt="Close"
-            class="cart-drawer__close-trigger js-cart-drawer-trigger"
+            class="cart-drawer__close-trigger"
           >
         </button>
-      </div>
+      </header>
 
       <div class="cart-drawer__content"></div>
+
+      <footer class="cart-drawer__footer">
+        <p class="cart-drawer__subtotal">Subtotal: £22.81</p>
+        <button class="button cart-drawer__checkout-button">Proceed to Checkout</button>
+        <button class="link">Continue Shopping</button>
+      </footer>
     </dialog>
 
     <script type="module" src="/src/js/main.js"></script>

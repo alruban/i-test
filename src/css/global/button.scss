@@ -1,23 +1,77 @@
 .button {
+  --b-cutton-bg: var(--color-orange);
+  --b-cutton-color: white;
+  --b-cutton-border: var(--color-orange);
+
   min-width: 17.9rem;
   height: 4.6rem;
   border-radius: 5rem;
-  background-color: var(--color-orange);
-  color: white;
+  background-color: var(--b-cutton-bg);
+  color: var(--b-cutton-color);
   line-height: 2.4rem;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 0.1rem solid var(--color-orange);
-  cursor: pointer;
+  border: 0.1rem solid var(--b-cutton-border);
+  user-select: none;
   transition: border-color 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
+  position: relative;
+  overflow: hidden;
+
+  // No interactions when loading
+  &:not(:has(.button__loader[aria-hidden="false"])) {
+    @media (hover: hover) {
+      &:hover {
+        --b-cutton-bg: white;
+        --b-cutton-color: var(--color-orange);
+        --b-cutton-border: var(--color-orange);
+      }
+    }
+
+    &:active {
+      --b-cutton-bg: var(--color-orange);
+      --b-cutton-color: white;
+      --b-cutton-border: var(--color-orange);
+    }
+  }
+
+  &__loader {
+    visibility: hidden;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: visibility 300ms ease-in-out, background-color 300ms ease-in-out;
+    background-color: var(--b-cutton-bg);
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+.link {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 10%;
+  text-underline-offset: 50%;
+  text-transform: uppercase;
 
   @media (hover: hover) {
     &:hover {
-      background-color: white;
-      color: var(--color-orange);
+      text-decoration: none;
     }
   }
 }
