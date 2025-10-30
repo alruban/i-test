@@ -24,7 +24,7 @@ export default class AddToCart {
     if (isLoading) {
       this.elAddToCartLoading.setAttribute("aria-hidden", "false");
       this.elAddToCartLoading.style.visibility = "visible";
-      this.elAddToCartButtonText.style.display = "hidden";
+      this.elAddToCartButtonText.style.display = "none";
     } else {
       this.elAddToCartLoading.setAttribute("aria-hidden", "true");
       this.elAddToCartLoading.style.visibility = "hidden";
