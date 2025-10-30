@@ -90,7 +90,10 @@
     </main>
 
     <dialog class="cart-drawer js-cart-drawer">
-      <header class="cart-drawer__header">
+      <header 
+        class="cart-drawer__header"
+        data-dialog-element="header"
+      >
         <h3 class="cart-drawer__title">Your Bag</h3>
         <button class="cart-drawer__close animate-scale js-cart-drawer-trigger">
           <img
@@ -101,7 +104,10 @@
         </button>
       </header>
 
-      <div class="cart-drawer__content">
+      <div 
+        class="cart-drawer__content"
+        data-dialog-element="content"
+      >
         <div class="cart-item">
           <img
             src="/card-image.png"
@@ -116,7 +122,10 @@
         </div>
       </div>
 
-      <footer class="cart-drawer__footer">
+      <footer 
+        class="cart-drawer__footer"
+        data-dialog-element="footer"
+      >
         <p class="cart-drawer__subtotal">Subtotal: £22.81</p>
         <button class="button cart-drawer__checkout-button js-cart-drawer-trigger">Proceed to Checkout</button>
         <button class="link">Continue Shopping</button>
